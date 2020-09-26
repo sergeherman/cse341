@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="myScript.js"></script>
   <title>cse341 week 2 enhancement</title>
 
     </head>
@@ -17,10 +18,11 @@
     <a href="assignments.php">Assignments</a>
   </div>
 </div>
-	
       
     </header>
     <main>
+<button class="button button2" onclick="myFunction()">Click for my motto</button>
+<h2 id="demo"></h2>
 
 	<div class="row"> 
   <div class="column">
