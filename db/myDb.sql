@@ -1,17 +1,17 @@
--- Create myDb
--- CREATEDB myDb
+--client table
 
--- client table
-CREATE TABLE client (
-  id bigserial NOT NULL PRIMARY KEY,
-  firstName VARCHAR(20)NOT NULL,
-  secondName VARCHAR(20)NOT NULL,
-  gender VARCHAR(6)NOT NULL,
-  email VARCHAR(20)
+CREATE TABLE public.client
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	firstName VARCHAR(20) NOT NULL,
+	secondName VARCHAR(20) NOT NULL,
+	gender VARCHAR(6) NOT NULL,
+    email VARCHAR(20)
 );
+
 -- stylist table
-CREATE TABLE stylist (
-  id bigserial NOT NULL PRIMARY KEY,
+CREATE TABLE public.stylist (
+  id SERIAL NOT NULL PRIMARY KEY,
   firstName VARCHAR(20) NOT NULL,
   secondName VARCHAR(20) NOT NULL,
   gender VARCHAR(6) NOT NULL,
@@ -19,25 +19,23 @@ CREATE TABLE stylist (
 );
 
 -- product table
-CREATE TABLE product (
-  id bigserial NOT NULL PRIMARY KEY,
+CREATE TABLE public.product (
+  id SERIAL NOT NULL PRIMARY KEY,
   productName VARCHAR(20) NOT NULL,
   productPrice DOUBLE NOT NULL  
 );
 
 -- service table
-CREATE TABLE service (
-  id bigserial NOT NULL PRIMARY KEY,
+CREATE TABLE public.service (
+  id SERIAL NOT NULL PRIMARY KEY,
   serviceName VARCHAR(20) NOT NULL,
   service DOUBLE NOT NULL,
-  product_id int references product(id)  
+  product_id INT references product(id)  
 );
-CREATE TABLE order (
-  id bigserial NOT NULL PRIMARY KEY,
-  client_id int references client(id) NOT NULL,
-  service_id int references service(id) NOT NULL,
-  stylist_id int references stylist(id) NOT NULL,
-  orderDate date   
+CREATE TABLE public.orders (
+  id SERIAL NOT NULL PRIMARY KEY,
+  client_id INT REFERENCES public.client(id) NOT NULL,
+  service_id INT REFERENCES public.service(id) NOT NULL,
+  stylist_id INT REFERENCES public.stylist(id) NOT NULL,
+  orderDate DATE   
 );
-
-PRO
