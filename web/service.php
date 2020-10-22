@@ -1,33 +1,42 @@
 <?php
-include_once 'mydbtest/dbh.mydbtest.php';
+require "dbconnect.php";
+$db = get_db();
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <tytle></tytle>
- </head>
- <body>
- <?php
-$sql = "select sv.serviceName 'serviceName', sv.service 'servicePrice',
-p.productName 'productName', p.productPrice 'productPrice'
-from product p, service sv
-where sv.product_id = p.id 
-order by sv.serviceName;";
-$result = mysqli_query($conn, $sql);
-$resultCheck = mysqli_num_rows($result);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-echo " Services list:"."<br>";
+<?php
+echo " SERVICES LIST:"."<br>";
+try {
 
-if ($resultCheck >0) {
-	while ($row = mysqli_fetch_assoc($result)) {
-		echo $row['serviceName'].", Service price:   ";
-		echo $row['servicePrice'].", product used:";
-		echo $row['productName'].", Product price";
-		echo $row['productPrice']."<br>";
+  $statement = $db->prepare('SELECT sv.serviceName, sv.service , p.productName , p.productPrice from product p, service sv where sv.product_id = p.id  order by sv.serviceName;');
+  $statement->execute();
+
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $servicename = $row['servicename'];
+    $service = $row['service'];
+    $productname = $row['productname'];
+    $email = $row['email'];
+
+    echo "<p> Service name: $servicename, Service price:  $service, Product name:  $productname, productprice:  $email</p>";
+
+  }
+} catch (Exception $ex) {
+  echo "$ex";
 }
-}
+
+
+
+
 ?>
  
- </body>
- </html>
+</body>
+</html>
