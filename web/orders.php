@@ -1,42 +1,48 @@
 <?php
-include_once 'mydbtest/dbh.mydbtest.php';
+require "dbconnect.php";
+$db = get_db();
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <tytle></tytle>
- </head>
- <body>
- <?php
-$sql = "select c.firstName 'Client firstName', c.secondName 'Client secondName', 
-s.firstName 'Stylist firstName', s.secondName 'Stylist secondName',
-p.productName 'productName', p.productPrice 'productPrice',
-sv.serviceName 'serviceName', sv.service 'servicePrice',
-o.orderDate 'orderDate'
-from client c, stylist s, product p, service sv, orders o
-where o.client_id = c.id and o.stylist_id = s.id and o.service_id = sv.id  and sv.product_id = p.id 
-order by o.orderDate;";
-$result = mysqli_query($conn, $sql);
-$resultCheck = mysqli_num_rows($result);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-echo " Orders list:"."<br>";
+<?php
+echo " ORDERS LIST:"."<br>";
+try {
 
-if ($resultCheck >0) {
-	while ($row = mysqli_fetch_assoc($result)) {
-		echo " Client name: ";
-		echo $row['Client firstName']."   ";
-		echo $row['Client secondName'].", Stylist name: ";
-		echo $row['Stylist firstName']." ";
-		echo $row['Stylist secondName'].", service: ";
-		echo $row['serviceName'].", service price: ";	
-		echo $row['servicePrice'].", product: ";	
-		echo $row['productName'].", product price: ";	
-		echo $row['productPrice'].", order date: ";		
-		echo $row['orderDate']."<br>";
+  $statement = $db->prepare('SELECT c.firstName , c.secondName , s.firstName , s.secondName , p.productName , p.productPrice , sv.serviceName , sv.service , o.orderDate from client c, stylist s, product p, service sv, orders o where o.client_id = c.id and o.stylist_id = s.id and o.service_id = sv.id  and sv.product_id = p.id order by o.orderDate;');
+  $statement->execute();
+
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+		$cfirstname = $row['c.firstname'];
+		$csecondname = $row['c.secondname'];
+		$sfirstname = $row['s.firstname'];
+    $ssecondname = $row['s.secondname'];
+    $servicename = $row['servicename'];
+    $service = $row['service'];
+    $productname = $row['productname'];
+		$productprice = $row['productprice'];
+		$orderdate = $row['orderdate'];
+
+
+    echo "<p> Client name: $cfirstname  $csecondname, Stylist name: $sfirstname  $ssecondname, Service name: $servicename, Service price:  $service, Product name:  $productname, Product price:  $productprice, Order date:  $orderdate</p>";
+
+  }
+} catch (Exception $ex) {
+  echo "$ex";
 }
-}
+
+
+
+
 ?>
  
- </body>
- </html>
+</body>
+</html>
