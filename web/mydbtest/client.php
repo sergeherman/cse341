@@ -17,7 +17,7 @@ $db = get_db();
 
 try {
 
-  $statement = $db->prepare('select firstname , secondname , gender, email from client order by secondname;');
+  $statement = $db->prepare('SELECT firstname , secondname , gender, email FROM client ORDER BY secondname;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
