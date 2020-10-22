@@ -24,7 +24,7 @@ try {
     $servicename = $row['servicename'];
     $service = $row['service'];
     $productname = $row['productname'];
-    $email = $row['productprice'];
+    $productprice = $row['productprice'];
 
     echo "<p> Service name: $servicename, Service price:  $service, Product name:  $productname, productprice:  $productprice</p>";
 
