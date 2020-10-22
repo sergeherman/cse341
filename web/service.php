@@ -24,9 +24,9 @@ try {
     $servicename = $row['servicename'];
     $service = $row['service'];
     $productname = $row['productname'];
-    $email = $row['email'];
+    $email = $row['productprice'];
 
-    echo "<p> Service name: $servicename, Service price:  $service, Product name:  $productname, productprice:  $email</p>";
+    echo "<p> Service name: $servicename, Service price:  $service, Product name:  $productname, productprice:  $productprice</p>";
 
   }
 } catch (Exception $ex) {
