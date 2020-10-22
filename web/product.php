@@ -1,29 +1,40 @@
 <?php
-include_once 'mydbtest/dbh.mydbtest.php';
+require "dbconnect.php";
+$db = get_db();
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <tytle></tytle>
- </head>
- <body>
- <?php
-$sql = "select productName 'productName', productPrice 'productPrice'
-from product
-order by productName;";
-$result = mysqli_query($conn, $sql);
-$resultCheck = mysqli_num_rows($result);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-echo " Products list:"."<br>";
+<?php
+echo " PRODUCTS LIST:"."<br>";
+try {
 
-if ($resultCheck >0) {
-	while ($row = mysqli_fetch_assoc($result)) {
-		echo $row['productName'].", price:    ";
-		echo $row['productPrice']."<br>";
+  $statement = $db->prepare('SELECT productName, productPrice from product order by productName;');
+  $statement->execute();
+
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $productname = $row['productname'];
+    $productprice = $row['productprice'];
+    
+    echo "<p> Product name: $productname, Product price:  $productprice</p>";
+
+  }
+} catch (Exception $ex) {
+  echo "$ex";
 }
-}
+
+
+
+
 ?>
  
- </body>
- </html>
+</body>
+</html>
