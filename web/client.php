@@ -1,33 +1,42 @@
 <?php
-include_once 'mydbtest/dbh.mydbtest.php';
+require "dbconnect.php";
+$db = get_db();
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <tytle></tytle>
- </head>
- <body>
- <?php
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
 
-echo " CLIENTS LIST"."<br>";
-$sql = "SELECT firstName, secondName, gender, email
-FROM client 
-ORDER BY secondName;";
-$result = mysqli_query($conn, $sql);
-$resultCheck = mysqli_num_rows($result);
+<?php
+echo " CLIENTS LIST:"."<br>";
+try {
 
-echo " Clients list:"."<br>";
+  $statement = $db->prepare('SELECT * from client');
+  $statement->execute();
 
-if ($resultCheck >0) {
-	while ($row = mysqli_fetch_assoc($result)) {
-		echo $row['firstName']."   ";
-		echo $row['secondName'].", ";
-		echo $row['gender'].", ";
-		echo $row['email']."<br>";
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $firstname = $row['firstname'];
+    $secondname = $row['secondname'];
+    $gender = $row['gender'];
+    $email = $row['email'];
+
+    echo "<p> $firstname , $secondname , $gender , $email</p>";
+
+  }
+} catch (Exception $ex) {
+  echo "$ex";
 }
-}
+
+
+
+
 ?>
  
- </body>
- </html>
+</body>
+</html>
