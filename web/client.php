@@ -9,9 +9,11 @@ include_once 'mydbtest/dbh.mydbtest.php';
  </head>
  <body>
  <?php
-$sql = "select firstName, secondName, gender, email
-from client 
-order by secondName;";
+
+echo " CLIENTS LIST"."<br>";
+$sql = "SELECT firstName, secondName, gender, email
+FROM client 
+ORDER BY secondName;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 
