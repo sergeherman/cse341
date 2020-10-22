@@ -17,7 +17,7 @@ $db = get_db();
 echo " CLIENTS LIST:"."<br>";
 try {
 
-  $statement = $db->prepare('SELECT * from client');
+  $statement = $db->prepare('SELECT firstname , secondname , gender, email from client order by secondname;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -26,7 +26,7 @@ try {
     $gender = $row['gender'];
     $email = $row['email'];
 
-    echo "<p> $firstname , $secondname , $gender , $email</p>";
+    echo "<p> Client name: $firstname  $secondname, Gender:  $gender, Email:  $email</p>";
 
   }
 } catch (Exception $ex) {
