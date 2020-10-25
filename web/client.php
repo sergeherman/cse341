@@ -12,9 +12,10 @@ $db = get_db();
   <title>Document</title>
 </head>
 <body>
-
+<h2> CLIENTS LIST"<h2> 
+<ul>
 <?php
-echo " CLIENTS LIST:"."<br>";
+
 try {
 
   $statement = $db->prepare('SELECT firstname , secondname , gender, email from client order by secondname;');
@@ -26,7 +27,7 @@ try {
     $gender = $row['gender'];
     $email = $row['email'];
 
-    echo "<p> Client name: $firstname  $secondname, Gender:  $gender, Email:  $email</p>";
+    echo "<li><p> Client name: $firstname  $secondname, Gender:  $gender, Email:  $email</p></li>";
 
   }
 } catch (Exception $ex) {
@@ -34,9 +35,10 @@ try {
 }
 
 
-
-
+die();
 ?>
+
+</ul>
  
 </body>
 </html>
