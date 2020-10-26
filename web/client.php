@@ -14,6 +14,17 @@ $db = get_db();
 <body>
 <h2> CLIENTS LIST<h2> 
 
+<form method="post" action="addclient.php">
+<!-- <textarea name = 'firstname'><textarea>
+<textarea name = 'secondname'><textarea>
+<textarea name = 'gender'><textarea>
+<textarea name = 'email'><textarea> -->
+First Name: <input type="text" name="firstname"><br>
+Second Name: <input type="text" name="secondname"><br>
+Gender: <input type="text" name="gender"><br>
+E-mail: <input type="text" name="email"><br>
+<input type='submit' value='Create Client'>
+</form>
 
 <ul>
 <?php
@@ -42,13 +53,5 @@ die();
 
 </ul>
  
-<form method="post" action="addclient.php">
-<textarea name = 'firstname'><textarea>
-<textarea name = 'secondname'><textarea>
-<textarea name = 'gender'><textarea>
-<textarea name = 'email'><textarea>
-<input type='submit' value='Create Client'>
-</form>
-
 </body>
 </html>
