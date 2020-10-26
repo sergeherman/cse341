@@ -9,12 +9,17 @@ $db = get_db();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>SERVICES</title>
 </head>
 <body>
-
+<h2>SERVICES LIST</h2>
+<form method="post" action="addservice.php">
+Service Name: <input type="text" name="servicename"><br>
+Service Price: <input type="text" name="service"><br>
+Product ID: <input type="text" name="product_id"><br>
+<input type='submit' value='Add Service'>
+</form>
 <?php
-echo " SERVICES LIST:"."<br>";
 try {
 
   $statement = $db->prepare('SELECT sv.serviceName, sv.service , p.productName , p.productPrice from product p, service sv where sv.product_id = p.id  order by sv.serviceName;');
