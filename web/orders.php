@@ -9,12 +9,19 @@ $db = get_db();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ORDERS</title>
 </head>
 <body>
-
+<h2>ORDERS LIST</h2>
+<form method="post" action="addorders.php">
+Order Date YYYY-MM-DD: <input type="text" name="orderDate"><br>
+Client ID: <input type="text" name="client_id"><br>
+Stylist ID: <input type="text" name="stylist_id"><br>
+Service ID: <input type="text" name="service_id"><br>
+<input type='submit' value='Add Order'>
+</form>
 <?php
-echo " ORDERS LIST:"."<br>";
+
 try {
 
   $statement = $db->prepare('SELECT c.firstName , c.secondName , s.firstName , s.secondName , p.productName , p.productPrice , sv.serviceName , sv.service , o.orderDate from client c, stylist s, product p, service sv, orders o where o.client_id = c.id and o.stylist_id = s.id and o.service_id = sv.id  and sv.product_id = p.id order by o.orderDate;');
