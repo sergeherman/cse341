@@ -15,10 +15,6 @@ $db = get_db();
 <h2> CLIENTS LIST<h2> 
 
 <form method="post" action="addclient.php">
-<!-- <textarea name = 'firstname'><textarea>
-<textarea name = 'secondname'><textarea>
-<textarea name = 'gender'><textarea>
-<textarea name = 'email'><textarea> -->
 First Name: <input type="text" name="firstname"><br>
 Second Name: <input type="text" name="secondname"><br>
 Gender: <input type="text" name="gender"><br>
