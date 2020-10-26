@@ -12,7 +12,15 @@ $db = get_db();
   <title>Document</title>
 </head>
 <body>
-<h2> CLIENTS LIST"<h2> 
+<h2> CLIENTS LIST<h2> 
+
+<form method="post" action="addclient.php">
+<textarea name = 'firstname'><textarea>
+<textarea name = 'secondname'><textarea>
+<textarea name = 'gender'><textarea>
+<textarea name = 'email'><textarea>
+<input type='submit' value='Create Client'>
+</form>
 <ul>
 <?php
 
