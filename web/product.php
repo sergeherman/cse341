@@ -9,12 +9,18 @@ $db = get_db();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>PRODUCTS</title>
 </head>
 <body>
+<h2> PRODUCTS LIST</h2>;
+<form method="post" action="addproduct.php">
+Product Name: <input type="text" name="productname"><br>
+Product Price: <input type="text" name="productprice"><br>
+<input type='submit' value='Add Product'>
+</form>
 
 <?php
-echo " PRODUCTS LIST:"."<br>";
+
 try {
 
   $statement = $db->prepare('SELECT productName, productPrice from product order by productName;');

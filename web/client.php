@@ -19,7 +19,7 @@ First Name: <input type="text" name="firstname"><br>
 Second Name: <input type="text" name="secondname"><br>
 Gender: <input type="text" name="gender"><br>
 E-mail: <input type="text" name="email"><br>
-<input type='submit' value='Create Client'>
+<input type='submit' value='Add Client'>
 </form>
 
 <ul>

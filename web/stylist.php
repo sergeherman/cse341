@@ -12,13 +12,13 @@ $db = get_db();
   <title>STYLITS</title>
 </head>
 <body>
-<h2> CLIENTS LIST<h2>
+<h2> STYLITS LIST<h2>
 <form method="post" action="addstylist.php">
 First Name: <input type="text" name="firstname"><br>
 Second Name: <input type="text" name="secondname"><br>
 Gender: <input type="text" name="gender"><br>
 E-mail: <input type="text" name="email"><br>
-<input type='submit' value='Create Client'>
+<input type='submit' value='Add Stylist'>
 </form>
 <?php
 try {
