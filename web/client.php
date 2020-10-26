@@ -1,9 +1,3 @@
-<?php
-require "dbconnect.php";
-$db = get_db();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +7,15 @@ $db = get_db();
 </head>
 <body>
 <h2> CLIENTS LIST"<h2> 
+
+<form method="post" action="addclient.php">
+<textarea name = 'firstname'><textarea>
+<textarea name = 'secondname'><textarea>
+<textarea name = 'gender'><textarea>
+<textarea name = 'email'><textarea>
+<input type='submit' value='Create Client'>
+</form>
+
 <ul>
 <?php
 
