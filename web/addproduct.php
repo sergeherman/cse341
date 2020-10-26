@@ -6,8 +6,8 @@ require "dbconnect.php";
 $db = get_db();
 
 $stmt = $db->prepare('INSERT INTO product (productname, productprice) VALUES (:productname, :productprice);');
-$stmt->bindValue(':productname', $firstname, PDO::PARAM_STR);
-$stmt->bindValue(':productprice', $secondname, PDO::PARAM_STR);
+$stmt->bindValue(':productname', $productname, PDO::PARAM_STR);
+$stmt->bindValue(':productprice', $productprice, PDO::PARAM_STR);
 
 $stmt->execute();
 

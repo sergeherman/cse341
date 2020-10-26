@@ -12,7 +12,7 @@ $db = get_db();
   <title>PRODUCTS</title>
 </head>
 <body>
-<h2> PRODUCTS LIST</h2>;
+<h2> PRODUCTS LIST</h2>
 <form method="post" action="addproduct.php">
 Product Name: <input type="text" name="productname"><br>
 Product Price: <input type="text" name="productprice"><br>
