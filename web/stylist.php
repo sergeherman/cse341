@@ -9,12 +9,18 @@ $db = get_db();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>STYLITS</title>
 </head>
 <body>
-
+<h2> CLIENTS LIST<h2>
+<form method="post" action="addstylist.php">
+First Name: <input type="text" name="firstname"><br>
+Second Name: <input type="text" name="secondname"><br>
+Gender: <input type="text" name="gender"><br>
+E-mail: <input type="text" name="email"><br>
+<input type='submit' value='Create Client'>
+</form>
 <?php
-echo " STYLITS LIST:"."<br>";
 try {
 
   $statement = $db->prepare('SELECT firstname , secondname , gender, email from stylist order by secondname;');
