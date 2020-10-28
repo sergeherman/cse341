@@ -39,7 +39,7 @@ E-mail: <input type="text" name="email"><br><br>
 
 try {
 
-  $statement = $db->prepare('SELECT firstname , secondname , gender, email from client order by secondname;');
+  $statement = $db->prepare('SELECT firstname , secondname , gender, email from client order by id desc;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {

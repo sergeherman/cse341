@@ -23,7 +23,7 @@ Product Price: <input type="text" name="productprice"><br>
 
 try {
 
-  $statement = $db->prepare('SELECT productName, productPrice from product order by productName;');
+  $statement = $db->prepare('SELECT productName, productPrice from product order by id desc;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
