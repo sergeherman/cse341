@@ -42,10 +42,10 @@ try {
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-		$cfirstname = $row['c.firstname'];
-		$csecondname = $row['c.secondname'];
-		$sfirstname = $row['s.firstname'];
-    $ssecondname = $row['s.secondname'];
+		$cfirstname = $row['c.firstName'];
+		$csecondname = $row['c.secondName'];
+		$sfirstname = $row['s.firstName'];
+    $ssecondname = $row['s.secondName'];
     $servicename = $row['servicename'];
     $service = $row['service'];
     $productname = $row['productname'];
