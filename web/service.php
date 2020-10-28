@@ -45,8 +45,7 @@ try {
     $productname = $row['productname'];
     $productprice = $row['productprice'];
 
-    echo "<p> Service name: $servicename, Service price:  $service, Product name:  $productname, productprice:  $productprice</p>";
-    "<tr>
+    echo "<tr>
     <td>$servicename</td>
     <td>$service</td>
     <td>$productname</td>
