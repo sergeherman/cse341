@@ -26,6 +26,12 @@ E-mail: <input type="text" name="email"><br><br>
 <input type='submit' value='Delete record'>
 </form>
 <h3> Clients List</h3> 
+<table>
+  <tr>
+    <th>Stylist name</th>
+    <th>Gender</th>
+    <th>Email</th>
+  </tr>
 <?php
 try {
 
@@ -38,17 +44,17 @@ try {
     $gender = $row['gender'];
     $email = $row['email'];
 
-    echo "<p> Stylist name: $firstname  $secondname, Gender:  $gender, Email:  $email</p>";
+    echo "<tr>
+    <td>$firstname  $secondname</td>
+    <td>$gender</td>
+    <td>$email</td> 
+    </tr>";
 
   }
 } catch (Exception $ex) {
   echo "$ex";
 }
-
-
-
-
 ?>
- 
+ </table>
 </body>
 </html>
