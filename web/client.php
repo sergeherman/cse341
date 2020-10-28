@@ -19,7 +19,7 @@ $db = get_db();
 First Name: <input type="text" name="firstname">
 Second Name: <input type="text" name="secondname"><br><br>
 Gender: <input type="text" name="gender">
-E-mail: <input type="text" name="email"><br>
+E-mail: <input type="text" name="email"><br><br>
 <input type='submit' value='Add Client'>
 </form>
 <h3> Delete the latest client record</h3> 
