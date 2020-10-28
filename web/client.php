@@ -22,7 +22,13 @@ E-mail: <input type="text" name="email"><br>
 <input type='submit' value='Add Client'>
 </form>
 
-<ul>
+<table>
+  <tr>
+    <th>Client name</th>
+    <th>Gender</th>
+    <th>Email</th>
+  </tr>
+  
 <?php
 
 try {
@@ -36,7 +42,11 @@ try {
     $gender = $row['gender'];
     $email = $row['email'];
 
-    echo "<li><p> Client name: $firstname  $secondname, Gender:  $gender, Email:  $email</p></li>";
+    echo "<tr>
+    <td>$firstname  $secondname</td>
+    <td>$gender</td>
+    <td>$email</td> 
+    </tr>";
 
   }
 } catch (Exception $ex) {
@@ -47,7 +57,7 @@ try {
 die();
 ?>
 
-</ul>
+</table>
  
 </body>
 </html>
