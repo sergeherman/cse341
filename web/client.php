@@ -24,6 +24,10 @@ E-mail: <input type="text" name="email"><br>
 <input type='submit' value='Add Client'>
 </form>
 
+<form method="post" action="deleteclient.php">
+<input type='submit' value='Delete the latest client record'>
+</form>
+
 <table>
   <tr>
     <th>Client name</th>
