@@ -14,7 +14,7 @@ $db = get_db();
 <body>
 <h2>ORDERS LIST</h2>
 <form method="post" action="addorders.php">
-<!--Order Date YYYY-MM-DD: <input type="text" name="orderdate"><br>--> 
+Order Date YYYY-MM-DD: <input type="text" name="orderdate"><br> 
 Client ID: <input type="text" name="client_id"><br>
 Stylist ID: <input type="text" name="stylist_id"><br>
 Service ID: <input type="text" name="service_id"><br>
