@@ -16,16 +16,17 @@ $db = get_db();
 <body>
 <h3> Add new client</h3> 
 <form method="post" action="addclient.php">
-First Name: <input type="text" name="firstname"><br>
-Second Name: <input type="text" name="secondname"><br>
-Gender: <input type="text" name="gender"><br>
+First Name: <input type="text" name="firstname">
+Second Name: <input type="text" name="secondname"><br><br>
+Gender: <input type="text" name="gender">
 E-mail: <input type="text" name="email"><br>
 <input type='submit' value='Add Client'>
 </form>
 <h3> Delete the latest client record</h3> 
 <form method="post" action="deleteclient.php">
-<input type='submit' value='Delete record'><br>
+<input type='submit' value='Delete record'>
 </form>
+<h3> Clients List</h3> 
 
 <table>
   <tr>
