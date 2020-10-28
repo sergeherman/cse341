@@ -6,7 +6,7 @@ $service_id = htmlspecialchars($_POST['service_id']);
 
 require "dbconnect.php";
 $db = get_db();
-echo "$orderdate $client_id $stylist_id $service_id"
+echo "$orderdate $client_id $stylist_id $service_id";
 // $stmt = $db->prepare('INSERT INTO orders (client_id, service_id, stylist_id, orderdate ) VALUES (:client_id, :service_id, :stylist_id, :orderdate);');
 // $stmt->bindValue(':orderdate', $orderdate, PDO::PARAM_STR);
 // $stmt->bindValue(':client_id', $client_id, PDO::PARAM_INT);
