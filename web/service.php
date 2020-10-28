@@ -10,15 +10,29 @@ $db = get_db();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SERVICES</title>
+  <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
-<h2>SERVICES LIST</h2>
+<h3> Add new service</h3> 
 <form method="post" action="addservice.php">
-Service Name: <input type="text" name="servicename"><br>
-Service Price: <input type="text" name="service"><br>
-Product ID: <input type="text" name="product_id"><br>
+Service Name: <input type="text" name="servicename">
+Service Price: <input type="text" name="service"><br><br>
+Product ID: <input type="text" name="product_id"><br><br>
 <input type='submit' value='Add Service'>
 </form>
+<h3> Delete the latest service record</h3> 
+<form method="post" action="deleteservice.php">
+<input type='submit' value='Delete record'>
+</form>
+<h3> Services List</h3> 
+
+<table>
+  <tr>
+    <th>Service name</th>
+    <th>Service price</th>
+    <th>Product name</th>
+    <th>Product price</th>
+  </tr>
 <?php
 try {
 
@@ -32,16 +46,17 @@ try {
     $productprice = $row['productprice'];
 
     echo "<p> Service name: $servicename, Service price:  $service, Product name:  $productname, productprice:  $productprice</p>";
-
+    "<tr>
+    <td>$servicename</td>
+    <td>$service</td>
+    <td>$productname</td>
+    <td>$productprice</td>
+    </tr>";
   }
 } catch (Exception $ex) {
   echo "$ex";
 }
-
-
-
-
 ?>
- 
+ </table>
 </body>
 </html>
