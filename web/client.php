@@ -14,8 +14,7 @@ $db = get_db();
   
 </head>
 <body>
-<h2> CLIENTS LIST<h2> 
-
+<h3> Add new client</h3> 
 <form method="post" action="addclient.php">
 First Name: <input type="text" name="firstname"><br>
 Second Name: <input type="text" name="secondname"><br>
@@ -23,9 +22,9 @@ Gender: <input type="text" name="gender"><br>
 E-mail: <input type="text" name="email"><br>
 <input type='submit' value='Add Client'>
 </form>
-
+<h3> Delete the latest client record</h3> 
 <form method="post" action="deleteclient.php">
-<input type='submit' value='Delete the latest client record'>
+<input type='submit' value='Delete record'>
 </form>
 
 <table>
