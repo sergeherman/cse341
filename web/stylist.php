@@ -25,7 +25,7 @@ E-mail: <input type="text" name="email"><br><br>
 <form method="post" action="deletestylist.php">
 <input type='submit' value='Delete record'>
 </form>
-<h3> Clients List</h3> 
+<h3> Stylists List</h3> 
 <table>
   <tr>
     <th>Stylist name</th>
