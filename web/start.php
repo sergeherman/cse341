@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="header">
-  <a href="#default" class="logo">Bob’s Salon web application with database </a>
+  <a class="logo">Bob’s Salon web application with database </a>
   <div class="header-right">
     <a class="active" href="#home">Home</a>
     <a href="signin.php">Sign In</a>
@@ -16,9 +16,9 @@
   </div>
 </div>
 
-<div class="footer">
+<footer>
   <p>	&copy 2020 Bob’s Salon web application with database</p>
-</div>
-   
+</footer>
+
 </body>
 </html>

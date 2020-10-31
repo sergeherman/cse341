@@ -77,8 +77,8 @@
         
         
     ?>
-    <div class="footer">
+<footer>
   <p>	&copy 2020 Bob’s Salon web application with database</p>
-</div>
+</footer>
 </body>
 </html>
