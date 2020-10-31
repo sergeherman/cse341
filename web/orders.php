@@ -43,7 +43,7 @@ try {
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-    $id = $row['o.id'];
+    $id = $row['id'];
 		$cfirstname = $row['c.firstName'];
 		$csecondname = $row['c.secondName'];
 		$sfirstname = $row['s.firstName'];
