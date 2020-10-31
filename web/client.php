@@ -14,6 +14,18 @@ $db = get_db();
   
 </head>
 <body>
+<div class="header">
+  <a class="logo">Bob’s Salon web application with database </a>
+  <div class="header-right">
+    <a  href="welcome.php">Home</a>
+    <a class="active" href="#client">Clients</a>
+    <a href="stylist.php">Stylists</a>
+    <a href="product.php">Products</a>
+    <a href="service.php">Services</a>
+    <a href="orders.php">Orders</a>
+  </div>
+</div>
+<br>
 <h3> Add new client</h3> 
 <form method="post" action="addclient.php">
 First Name: <input type="text" name="firstname">
@@ -67,6 +79,8 @@ die();
 ?>
 
 </table>
- 
+<footer>
+  <p>	&copy 2020 Bob’s Salon web application with database</p>
+</footer>
 </body>
 </html>

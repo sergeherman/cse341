@@ -13,6 +13,18 @@ $db = get_db();
   <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
+<div class="header">
+  <a class="logo">Bob’s Salon web application with database </a>
+  <div class="header-right">
+    <a  href="welcome.php">Home</a>
+    <a  href="client.php">Clients</a>
+    <a href="stylist.php">Stylists</a>
+    <a  href="product.php">Products</a>
+    <a class="active" href="#service">Services</a>
+    <a  href="orders.php">Orders</a>
+  </div>
+</div>
+<br>
 <h3> Add new service</h3> 
 <form method="post" action="addservice.php">
 Service Name: <input type="text" name="servicename">
@@ -60,5 +72,8 @@ try {
 }
 ?>
  </table>
+ <footer>
+  <p>	&copy 2020 Bob’s Salon web application with database</p>
+</footer>
 </body>
 </html>
