@@ -42,12 +42,13 @@
     <a href="signup.php">Sign Up</a>
   </div>
 </div>
+<br><br> 
     <form method="POST">
         <label for="username">username</label>
-        <input type="text" name="username" id="username"/>
+        <input type="text" name="username" id="username"/><br><br> 
         <label for="password">password</label>
         <input type="password" name="password" id="password"/>
-        <input type="submit" id="submit" name="submit" value="sign in"/>
+        <input type="submit" id="submit" name="submit" value="sign in"/> <br><br> 
     </form>
     <?php
         if(isset($_POST['submit'])){
