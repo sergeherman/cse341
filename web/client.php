@@ -30,6 +30,7 @@ E-mail: <input type="text" name="email"><br><br>
 
 <table>
   <tr>
+    <th>Client id</th>
     <th>Client name</th>
     <th>Gender</th>
     <th>Email</th>
@@ -39,16 +40,18 @@ E-mail: <input type="text" name="email"><br><br>
 
 try {
 
-  $statement = $db->prepare('SELECT firstname , secondname , gender, email from client order by id desc;');
+  $statement = $db->prepare('SELECT id, firstname , secondname , gender, email from client order by id desc;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['id'];
     $firstname = $row['firstname'];
     $secondname = $row['secondname'];
     $gender = $row['gender'];
     $email = $row['email'];
 
     echo "<tr>
+    <td>$id</td>
     <td>$firstname  $secondname</td>
     <td>$gender</td>
     <td>$email</td> 
