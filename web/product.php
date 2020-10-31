@@ -27,21 +27,24 @@ Product Price: <input type="text" name="productprice"><br><br>
 
 <table>
   <tr>
+    <th>Product id</th>
     <th>Product name</th>
     <th>Product price</th>
   </tr>
 <?php
 
 try {
-  $statement = $db->prepare('SELECT productName, productPrice from product order by id desc;');
+  $statement = $db->prepare('SELECT id, productName, productPrice from product order by id desc;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['id'];
     $productname = $row['productname'];
     $productprice = $row['productprice'];
     
     echo 
     "<tr>
+    <td>$id</td>
     <td>$productname</td>
     <td>$productprice</td> 
     </tr>";

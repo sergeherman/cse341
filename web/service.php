@@ -28,6 +28,7 @@ Product ID: <input type="text" name="product_id"><br><br>
 
 <table>
   <tr>
+    <th>Service id</th>
     <th>Service name</th>
     <th>Service price</th>
     <th>Product name</th>
@@ -36,16 +37,18 @@ Product ID: <input type="text" name="product_id"><br><br>
 <?php
 try {
 
-  $statement = $db->prepare('SELECT sv.serviceName, sv.service , p.productName , p.productPrice from product p, service sv where sv.product_id = p.id  order by sv.id desc;');
+  $statement = $db->prepare('SELECT sv.id, sv.serviceName, sv.service , p.productName , p.productPrice from product p, service sv where sv.product_id = p.id  order by sv.id desc;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    $id = $row['sv.id'];
     $servicename = $row['servicename'];
     $service = $row['service'];
     $productname = $row['productname'];
     $productprice = $row['productprice'];
 
     echo "<tr>
+    <td>$id</td>
     <td>$servicename</td>
     <td>$service</td>
     <td>$productname</td>
