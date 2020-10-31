@@ -29,8 +29,8 @@ Service ID: <input type="text" name="service_id"><br><br>
 <table>
   <tr>
     <th>Order id</th>
-    <th>Client name</th>
-    <th>Stylist name</th>
+    <th>Client id</th>
+    <th>Stylist id</th>
     <th>Service name</th>
     <th>Service price</th>
     <th>Product name</th>
@@ -39,15 +39,13 @@ Service ID: <input type="text" name="service_id"><br><br>
   </tr>
 <?php
 try {
-  $statement = $db->prepare('SELECT o.id as o_id, c.firstName as c_firstName, c.secondName as c_secondName, s.firstName as s_firstName, s.secondName as s_secondName, p.productName , p.productPrice , sv.serviceName , sv.service , o.orderDate from client c, stylist s, product p, service sv, orders o where o.client_id = c.id and o.stylist_id = s.id and o.service_id = sv.id  and sv.product_id = p.id order by o.id desc;');
+  $statement = $db->prepare('SELECT o.id as o_id, c.id as c_id, s.id as s_id, p.productName , p.productPrice , sv.serviceName , sv.service , o.orderDate from client c, stylist s, product p, service sv, orders o where o.client_id = c.id and o.stylist_id = s.id and o.service_id = sv.id  and sv.product_id = p.id order by o.id desc;');
   $statement->execute();
 
   while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
     $id = $row['o_id'];
-		$cfirstname = $row['c_firstName'];
-		$csecondname = $row['c_secondName'];
-		$sfirstname = $row['s_firstName'];
-    $ssecondname = $row['s_secondName'];
+		$cid = $row['c_id'];
+		$sid = $row['s_id'];
     $servicename = $row['servicename'];
     $service = $row['service'];
     $productname = $row['productname'];
@@ -57,8 +55,8 @@ try {
 
     echo "<tr>
     <td>$id</td>
-    <td>$cfirstname  $csecondname</td>
-    <td>$sfirstname  $ssecondname</td>
+    <td>$cid</td>
+    <td>$sid</td>
     <td>$servicename</td>
     <td>$service</td> 
     <td>$productname</td>
