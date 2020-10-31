@@ -27,7 +27,7 @@
 </div>
 <br><br>     
     <?php
-        echo '<p>Welcome, '.$username.'</p>';
+        echo '<h3>Welcome, '.$username.'</h3>';
         
     ?>
     <br><br> 

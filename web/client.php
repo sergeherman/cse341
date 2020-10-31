@@ -79,6 +79,7 @@ die();
 ?>
 
 </table>
+
 <footer>
   <p>	&copy 2020 Bob’s Salon web application with database</p>
 </footer>

@@ -15,7 +15,7 @@
     <a href="signup.php">Sign Up</a>
   </div>
 </div>
-
+<h3>Please sign in or sign up</h3>
 <footer>
   <p>	&copy 2020 Bob’s Salon web application with database</p>
 </footer>
